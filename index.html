@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/0.3.4/sockjs.min.js"></script>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style media="screen">
+    .chatdiv {
+      height: 200px;
+      overflow: scroll;
+    }
+    .belieff-blue{
+      background-color:#29244E !important;
+    }
+    .belieff-blue-text{
+      color:#29244E;
+    }
+    .belieff-yellow{
+      background-color:#FEFF7C !important;
+    }
+    .belieff-green{
+      background-color:#40C0BE;
+    }
+    .belieff-light-blue{
+      background-color:#009FFF;
+    }
+    .bot-msg{
+      float: left;
+      background-color:#29244E;
+      clear: both;
+      color: white;
+      padding: 20px;
+      border-radius: 0px 30px 30px 30px;
+      margin:10px;
+    }
+    .user-msg{
+      float: right;
+      background-color:#40C0BE;
+      color: white;
+      clear: both;
+      padding: 20px;
+      border-radius: 30px 30px 0px 30px;
+      margin:10px;
+    }
+    .delay {
+      animation-delay: 1s;
+    }
+    .hide-element {
+      display: none;
+    }
+    .show-element {
+      display: block;
+    }
+    .delayed {
+      animation-delay: 1s;
+    }
+
+  </style>
+</head>
+
+<body>
+<button type="button" name="button" onclick="sendData();">Send</button>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+<script>
+  var xhttp = new XMLHttpRequest();
+  var userJson =
+  {"data":
+  {
+      "id_user": null,
+      "datos_personales": {
+        "nombre": null,
+        "apellido": null,
+        "movil": {
+          "movil_num": null
+        },
+      },
+      "datos_laborales": {
+        "experiencia": [
+          {
+            "trabajo_cia": null,
+            "trabajo_periodo": {
+              "trabajo_periodo_fin": null
+            },
+            "trabajo_puesto": null,
+            "trabajo_func": null
+          }
+        ]
+      },
+      "educacion_y_habilidades": {
+        "chingon" : null
+      }
+    }
+};
+function sendData(){
+  xhttp.open("POST", "https://api.belieff.mx/ats/contact", true);
+  xhttp.setRequestHeader("Content-type", "application/json");
+  xhttp.setRequestHeader("Authorization", "Bearer 12302f8cf9c16e7b0c3f165a13aa26e0");
+  xhttp.send(userJson);
+}
+
+</script>
+
+</html>
