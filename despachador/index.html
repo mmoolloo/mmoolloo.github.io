@@ -23,10 +23,9 @@
 
   <body class="grey-text text-darken-1">
     <ul id="dropdownUser" class="dropdown-content">
-      <li><a class="indigo-text text-darken-4" href="#!">Menu one</a></li>
-      <li><a class="indigo-text text-darken-4" href="#!">Menu two</a></li>
-      <li class="divider"></li>
-      <li><a class="indigo-text text-darken-4" href="#!">Menu three</a></li>
+      <li><a class="orange-text text-darken-4" href="#!">ALTO VALOR</a></li>
+      <li><a class="red-text text-darken-4" href="#!">MERCANCIA REGULADA</a></li>
+      <li><a class="green-text text-darken-4" href="#!">NO ABRIR</a></li>
     </ul>
     <ul id="dropdownRegions" class="dropdown-content">
       <li><a class="indigo-text text-darken-4" href="#!">Región 1</a></li>
@@ -47,7 +46,7 @@
   <div class="container">
     <div class="card-panel">
       <h3 class="indigo-text text-darken-4 center">Búsqueda de guía</h3>
-      <form action="http://mmoolloo.github.io/despachador/searchResults.html" id="guiaForm">
+      <form action="" id="guiaForm">
         <div class="row">
           <div class="input-field col s12 m6 offset-m3">
             <i class="material-icons prefix">center_focus_strong</i>
@@ -80,7 +79,20 @@
     guiaInput.addEventListener('keyup', checkLength);
     function checkLength(e){
         if(e.target.value.length===10){
-            document.forms["guiaForm"].submit();
+          var tracking = guiaInput.value
+          var lastDigit = tracking.substr(-1);
+          if (lastDigit == 0) {
+            document.getElementById('guiaForm').action = "http://mmoolloo.github.io/despachador/searchResults0.html";
+          } else if (lastDigit == 1) {
+            document.getElementById('guiaForm').action = "http://mmoolloo.github.io/despachador/searchResults1.html";
+          } else if (lastDigit == 2) {
+            document.getElementById('guiaForm').action = "http://mmoolloo.github.io/despachador/searchResults2.html";
+          } else if (lastDigit == 3) {
+            document.getElementById('guiaForm').action = "http://mmoolloo.github.io/despachador/searchResults3.html";
+          } else {
+            document.getElementById('guiaForm').action = "http://mmoolloo.github.io/despachador/error.html";
+          }
+          document.forms["guiaForm"].submit();
         }
     }
   </script>
