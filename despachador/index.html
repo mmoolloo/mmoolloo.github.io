@@ -78,7 +78,7 @@
     var guiaInput = document.querySelector('#guia');
     guiaInput.addEventListener('keyup', checkLength);
     function checkLength(e){
-        if(e.target.value.length===10){
+        if(e.target.value.length===12){
           var tracking = guiaInput.value
           var lastDigit = tracking.substr(-1);
           if (lastDigit == 0) {

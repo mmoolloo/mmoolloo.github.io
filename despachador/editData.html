@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Despachador Aduanal</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style media="screen">
+    .input-field input[type=text]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+      color: #B71C1C !important;
+    }
+      .input-field input[type=text]:focus, .materialize-textarea:focus:not([readonly]) {
+       border-bottom: 1px solid #B71C1C !important;
+       box-shadow: 0 1px 0 0 #B71C1C !important;
+    }
+      .input-field .prefix.active {
+       color: #B71C1C !important;
+    }
+    .rounded{
+      border-radius: 4px;
+    }
+    </style>
+  </head>
+
+  <body class="grey-text text-darken-1">
+    <ul id="dropdownUser" class="dropdown-content">
+      <li><a class="indigo-text text-darken-4" href="#!">Menu one</a></li>
+      <li><a class="indigo-text text-darken-4" href="#!">Menu two</a></li>
+      <li class="divider"></li>
+      <li><a class="indigo-text text-darken-4" href="#!">Menu three</a></li>
+    </ul>
+    <ul id="dropdownRegions" class="dropdown-content">
+      <li><a class="indigo-text text-darken-4" href="#!">Región 1</a></li>
+      <li><a class="indigo-text text-darken-4" href="#!">Región 2</a></li>
+      <li><a class="indigo-text text-darken-4" href="#!">Región 3</a></li>
+      <li><a class="indigo-text text-darken-4" href="#!">Región 4</a></li>
+    </ul>
+    <nav class="white">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo"><img style="max-height:60px" src="https://i0.wp.com/mexicoxport.com/wp-content/uploads/2019/01/logo2.png?w=600&ssl=1" alt="Logo Transpheric"></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a class="dropdown-trigger indigo-text text-darken-4" href="#!" data-target="dropdownRegions"><i class="material-icons left red-text text-darken-4">explore</i>Región 2 JMGA<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-trigger indigo-text text-darken-4" href="#!" data-target="dropdownUser"><i class="material-icons left">account_circle</i>Usuario<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="card-panel">
+      <div class="row center">
+        <div class="col s6 m3">
+          <div class="card green lighten-3" data-mh="tags" id="na" onclick="noAbrir()">
+            <p class="flow-text white-text center">
+              No abrir
+            </p>
+          </div>
+        </div>
+        <div class="col s6 m3">
+          <div class="card blue lighten-3" data-mh="tags" id="li" onclick="libros()">
+            <p class="flow-text white-text center">
+              Libros
+            </p>
+          </div>
+        </div>
+        <div class="col s6 m3">
+          <div class="card orange lighten-3" data-mh="tags" id="hv" onclick="hiVal()">
+            <p class="flow-text white-text center">
+              Alto Valor
+            </p>
+          </div>
+        </div>
+        <div class="col s6 m3">
+          <div class="card red lighten-3" data-mh="tags" id="mr" onclick="mercaReg()">
+            <p class="flow-text white-text center">
+              Mercancía Regulada
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row center">
+        <div class="col s6">
+          <div class="card grey" data-mh="mayExc" id="exe" onclick="exentos()">
+            <p class="flow-text white-text center">
+              Exentos (0-50 USD)
+            </p>
+          </div>
+        </div>
+        <div class="col s6">
+          <div class="card grey" data-mh="mayExc" id="may" onclick="mayores()">
+            <p class="flow-text white-text center">
+              Mayores (50-1000 USD)
+            </p>
+          </div>
+        </div>
+      </div>
+      <h1 class="indigo-text text-darken-4">Solo falta el formulario aquí</h1>
+      <div class="row">
+        <div class="col s4 center">
+          <a class="waves-effect waves-light btn-large grey" href="https://mmoolloo.github.io/despachador/"><i class="material-icons left">arrow_back</i>Atrás</a>
+        </div>
+        <div class="col s4 center">
+          <a class="waves-effect waves-light btn-large green darken-4" href="https://mmoolloo.github.io/despachador/"><i class="material-icons left">check</i>¡OK!</a>
+        </div>
+        <div class="col s4 center">
+          <a class="waves-effect waves-light btn-large grey" href=""><i class="material-icons left">cancel</i>Borrar datos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $(".dropdown-trigger").dropdown({
+          coverTrigger: false,
+          hover: true
+      });
+    });
+    $(function() {
+  	  $('.item').matchHeight();
+    });
+    function noAbrir() {
+      document.getElementById("na").classList.remove("lighten-3");
+      document.getElementById("li").classList.add("lighten-3");
+      document.getElementById("hv").classList.add("lighten-3");
+      document.getElementById("mr").classList.add("lighten-3");
+    };
+    function libros() {
+      document.getElementById("na").classList.add("lighten-3");
+      document.getElementById("li").classList.remove("lighten-3");
+      document.getElementById("hv").classList.add("lighten-3");
+      document.getElementById("mr").classList.add("lighten-3");
+    };
+    function hiVal() {
+      document.getElementById("na").classList.add("lighten-3");
+      document.getElementById("li").classList.add("lighten-3");
+      document.getElementById("hv").classList.remove("lighten-3");
+      document.getElementById("mr").classList.add("lighten-3");
+    };
+    function mercaReg() {
+      document.getElementById("na").classList.add("lighten-3");
+      document.getElementById("li").classList.add("lighten-3");
+      document.getElementById("hv").classList.add("lighten-3");
+      document.getElementById("mr").classList.remove("lighten-3");
+    };
+    function exentos() {
+      document.getElementById("exe").classList.add("darken-2");
+      document.getElementById("may").classList.remove("darken-2");
+    };
+    function mayores() {
+      document.getElementById("exe").classList.remove("darken-2");
+      document.getElementById("may").classList.add("darken-2");
+    };
+  </script>
+  </body>
+</html>
