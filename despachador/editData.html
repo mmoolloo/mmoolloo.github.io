@@ -47,41 +47,32 @@
     </div>
   </nav>
 
-  <div class="container">
+  <div class="">
     <div class="card-panel">
       <div class="row center">
-        <div class="col s6 m3">
-          <div class="card green lighten-3" data-mh="tags" id="na" onclick="noAbrir()">
-            <p class="flow-text white-text center">
-              No abrir
-            </p>
-          </div>
+        <div class="col s12">
+          <h3 class="indigo-text text-darken-4">AWB: XXXXXXXXXXXX</h3>
+          <h4 class="red-text text-darken-4 center">Referencia: XXXX</h4>
         </div>
-        <div class="col s6 m3">
-          <div class="card blue lighten-3" data-mh="tags" id="li" onclick="libros()">
-            <p class="flow-text white-text center">
-              Libros
-            </p>
-          </div>
+        <div class="col s9">
+        <div class="col s12">
+          <table>
+            <tbody>
+              <tr>
+                <td><i class="material-icons">receipt</i></td>
+                <td>Descripción:</td>
+                <td class="indigo-text text-darken-4">The original description of the package goes here</td>
+              </tr>
+              <tr>
+                <td><i class="material-icons">explicit</i></td>
+                <td>Descripción en español:</td>
+                <td class="indigo-text text-darken-4 flow-text">En este lugar va la traducción al español de la descripción</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div class="col s6 m3">
-          <div class="card orange lighten-3" data-mh="tags" id="hv" onclick="hiVal()">
-            <p class="flow-text white-text center">
-              Alto Valor
-            </p>
-          </div>
-        </div>
-        <div class="col s6 m3">
-          <div class="card red lighten-3" data-mh="tags" id="mr" onclick="mercaReg()">
-            <p class="flow-text white-text center">
-              Mercancía Regulada
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="row center">
         <div class="col s6">
-          <div class="card grey" data-mh="mayExc" id="exe" onclick="exentos()">
+          <div class="card grey darken-2" data-mh="mayExc" id="exe" onclick="exentos()">
             <p class="flow-text white-text center">
               Exentos (0-50 USD)
             </p>
@@ -94,8 +85,54 @@
             </p>
           </div>
         </div>
+        <form action="">
+          <div class="input-field col s6">
+            <i class="material-icons prefix">fitness_center</i>
+            <input id="weight" type="text" class="validate">
+            <label for="weight">Peso</label>
+          </div>
+          <div class="input-field col s6">
+            <i class="material-icons prefix">monetization_on</i>
+            <input id="value" type="text" class="validate">
+            <label for="value">Valor declarado</label>
+          </div>
+          <div class="input-field col s12">
+            <i class="material-icons prefix">monetization_on</i>
+            <input id="icon_prefix" type="text" class="validate">
+            <label for="icon_prefix">Descripción manual</label>
+          </div>
+        </form>
+        </div>
+        <div class="col s3">
+          <div class="card green" data-mh="tags" id="na" onclick="noAbrir()">
+            <p class="flow-text white-text center">
+              No abrir
+            </p>
+          </div>
+          <div class="card blue lighten-3" data-mh="tags" id="li" onclick="libros()">
+            <p class="flow-text white-text center">
+              Libros
+            </p>
+          </div>
+          <div class="card orange lighten-3" data-mh="tags" id="hv" onclick="hiVal()">
+            <p class="flow-text white-text center">
+              Alto Valor
+            </p>
+          </div>
+          <div class="card red lighten-3" data-mh="tags" id="mr" onclick="mercaReg()">
+            <p class="flow-text white-text center">
+              Mercancía Regulada
+            </p>
+          </div>
+        </div>
+
       </div>
-      <h1 class="indigo-text text-darken-4">Solo falta el formulario aquí</h1>
+      <div class="row center">
+
+        <div class="col s6">
+
+        </div>
+      </div>
       <div class="row">
         <div class="col s4 center">
           <a class="waves-effect waves-light btn-large grey" href="https://mmoolloo.github.io/despachador/"><i class="material-icons left">arrow_back</i>Atrás</a>
